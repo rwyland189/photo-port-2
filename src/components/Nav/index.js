@@ -3,15 +3,15 @@ import { capitalizeFirstLetter } from '../../utils/helpers';
 
 // nav is a child of app.js (where state was lifted to, the parent component), so pass props from app to nav component
 function Nav(props) {
-    useEffect(() => {
-        document.title = capitalizeFirstLetter(currentCategory.name);
-    }, [currentCategory]);
-
     const {
         categories = [],
         setCurrentCategory,
         currentCategory
     } = props;
+
+    useEffect(() => {
+        document.title = capitalizeFirstLetter(currentCategory.name);
+    }, [currentCategory]);
 
     return (
         <header>
